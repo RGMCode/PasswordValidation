@@ -1,8 +1,11 @@
 package RGMCode;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-
+        //pwCheck();
     }
 
 /*
@@ -19,6 +22,20 @@ Bonus:
 - Verbiete "schlechte" Passwörter wie "passwort" oder "123456".
 */
 
+    public static boolean pwCheck(String password){
+        if (password.matches(".*[A-Z]+.*") && password.matches(".*[a-z]+.*") && password.matches(".*\\d+.*" ) && password.length() >= 8 && password.length() <= 21 && !passwordIsWeakPassword(password)) {
+            System.out.println("Alles gut");
+            return true;
+        } else {
+            System.out.println("Alles kacke");
+            return false;
+        }
+    }
+
+    public static boolean passwordIsWeakPassword(String password) {
+        List<String> weakPasswords = Arrays.asList("passwort", "123456", "qwerty");
+        return weakPasswords.contains(password);
+    }
 
 }
 
