@@ -9,7 +9,7 @@ class MainTest {
     @Test
     void PasswordValidationTest(){
         //given
-        String password = "neueFische2023";
+        String password = "neue#Fische2023";
         //when
         boolean actualBoolean = Main.pwCheck(password);
         //then

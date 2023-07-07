@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        //pwCheck();
     }
 
 /*
@@ -20,10 +19,13 @@ Schreibe eine Passwortvalidierung.
 Bonus:
 - Checke, ob kleine/große Buchstaben enthalten sind.
 - Verbiete "schlechte" Passwörter wie "passwort" oder "123456".
+
+Bonus Bonus
+- Ein Sonderzeichen muss enthalten sein
 */
 
     public static boolean pwCheck(String password){
-        if (password.matches(".*[A-Z]+.*") && password.matches(".*[a-z]+.*") && password.matches(".*\\d+.*" ) && password.length() >= 8 && password.length() <= 21 && !passwordIsWeakPassword(password)) {
+        if (password.matches(".*[A-Z]+.*") && password.matches(".*[a-z]+.*") && password.matches(".*\\d+.*" ) && password.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]+.*") && password.length() >= 6 && password.length() <= 21 && !passwordIsWeakPassword(password)) {
             System.out.println("Alles gut");
             return true;
         } else {
@@ -33,7 +35,7 @@ Bonus:
     }
 
     public static boolean passwordIsWeakPassword(String password) {
-        List<String> weakPasswords = Arrays.asList("passwort", "123456", "qwerty");
+        List<String> weakPasswords = Arrays.asList("passwort", "123456", "qwerty", "pass123");
         return weakPasswords.contains(password);
     }
 
