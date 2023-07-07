@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
     }
 
 /*
@@ -47,7 +48,7 @@ Bonus Bonus
             System.out.println("geht");
             return true;
         } else {
-            System.out.println("alle kacke");
+            System.out.println("alles kacke");
             return false;
         }
     }

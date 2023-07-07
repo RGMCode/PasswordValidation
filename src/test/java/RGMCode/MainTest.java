@@ -14,7 +14,6 @@ class MainTest {
         boolean actualBoolean = Main.pwCheck(password);
         //then
         assertTrue(actualBoolean);
-
     }
 
     @Test
@@ -25,8 +24,9 @@ class MainTest {
         boolean actualBoolean = Main.passwordIsWeakPassword(password);
         //then
         assertFalse(actualBoolean);
-
     }
+
+    /* ****************************************************************************** */
 
     @Test
     void checkAll(){
