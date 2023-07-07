@@ -35,6 +35,7 @@ Bonus Bonus
     }
 
     public static boolean passwordIsWeakPassword(String password) {
+        // Die Liste kann belieb erweitert werden
         List<String> weakPasswords = Arrays.asList("passwort", "123456", "qwerty", "pass123", "ganzSicher567");
         return weakPasswords.contains(password);
     }
