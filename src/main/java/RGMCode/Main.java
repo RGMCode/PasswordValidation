@@ -24,8 +24,8 @@ Bonus Bonus
 - Ein Sonderzeichen muss enthalten sein
 */
 
-    public static boolean pwCheck(String password){
-        if (password.matches(".*[A-Z]+.*") && password.matches(".*[a-z]+.*") && password.matches(".*\\d+.*" ) && password.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]+.*") && password.length() >= 6 && password.length() <= 21 && !passwordIsWeakPassword(password)) {
+    public static boolean pwCheck(String password) {
+        if (password.matches(".*[A-Z]+.*") && password.matches(".*[a-z]+.*") && password.matches(".*\\d+.*") && password.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]+.*") && password.length() >= 6 && password.length() <= 21 && !passwordIsWeakPassword(password)) {
             System.out.println("Alles gut");
             return true;
         } else {
@@ -35,8 +35,60 @@ Bonus Bonus
     }
 
     public static boolean passwordIsWeakPassword(String password) {
-        List<String> weakPasswords = Arrays.asList("passwort", "123456", "qwerty", "pass123");
+        List<String> weakPasswords = Arrays.asList("passwort", "123456", "qwerty", "pass123", "ganzSicher567");
         return weakPasswords.contains(password);
+    }
+
+    /* *********************************************************************************************************** */
+
+    public static boolean pwCheck2(String password){
+        if (passwordLength(password) && upperChars(password) && lowerChars(password) && number(password) && specialChars(password)){
+            System.out.println("geht");
+            return true;
+        } else {
+            System.out.println("alle kacke");
+            return false;
+        }
+    }
+
+    public static boolean passwordLength(String password) {
+        if (password.length() > 6 && password.length() < 21) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean upperChars(String password) {
+        if (password.matches(".*[A-Z]+.*")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean lowerChars(String password) {
+        if (password.matches(".*[a-z]+.*")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean number(String password) {
+        if (password.matches(".*\\d+.*")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean specialChars(String password) {
+        if (password.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]+.*")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
